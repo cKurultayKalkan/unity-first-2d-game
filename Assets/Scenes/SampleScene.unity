@@ -280,6 +280,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassMid (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
@@ -693,7 +697,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 597090545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.37, y: -1.22, z: 0}
+  m_LocalPosition: {x: -5.37, y: -1.2, z: 0}
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -711,6 +715,10 @@ PrefabInstance:
     - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_Name
       value: GrassMid (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
@@ -845,7 +853,7 @@ GameObject:
   - component: {fileID: 784385265}
   - component: {fileID: 784385264}
   - component: {fileID: 784385266}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1187,14 +1195,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 857763831}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.196, y: -1.856, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalRotation: {x: 0.051946647, y: -0, z: -0, w: 0.99864984}
+  m_LocalPosition: {x: -6.99, y: -0.56, z: 0.09}
+  m_LocalScale: {x: 0.446965, y: 0.446965, z: 0.89393}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2041298098}
   m_Father: {fileID: 0}
   m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5.955, y: 0, z: 0}
 --- !u!50 &857763835
 Rigidbody2D:
   serializedVersion: 4
@@ -1279,7 +1288,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 655daa6ae3d444af0b9d1dd17f74a5c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
+  jumpSpeed: 250
+  jumpFrequency: 0.1
+  nextJumpTime: 0
+  isGrounded: 0
+  groundCheckPosition: {fileID: 2041298098}
+  groundCheckRadius: 0.1
+  groundCheckLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1001 &978146171
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1482,6 +1500,10 @@ PrefabInstance:
     - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_Name
       value: GrassMid (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
@@ -1762,6 +1784,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassMid (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
@@ -1888,6 +1914,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassMid (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
@@ -1952,6 +1982,10 @@ PrefabInstance:
     - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_Name
       value: GrassMid (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
@@ -2090,6 +2124,10 @@ PrefabInstance:
     - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_Name
       value: GrassMid (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
@@ -2389,6 +2427,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassMid (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
@@ -2454,6 +2496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GrassMid (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
       value: 0
@@ -2507,6 +2553,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+--- !u!1 &2041298097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2041298098}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 1206586993520771344, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2041298098
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2041298097}
+  m_LocalRotation: {x: -0.039089974, y: -0.00083292194, z: -0.0000325838, w: 0.99923533}
+  m_LocalPosition: {x: -0.031, y: -0.707, z: -0.001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 857763834}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: -4.481, y: -0.096, z: 0}
 --- !u!1 &2099262128
 GameObject:
   m_ObjectHideFlags: 0
@@ -2518,7 +2595,7 @@ GameObject:
   - component: {fileID: 2099262130}
   - component: {fileID: 2099262129}
   - component: {fileID: 2099262131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GrassRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2846,11 +2923,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1400849533122288051, guid: 7adf5cec6ed22402994e412dda292c31, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.69
+      value: -4.55
       objectReference: {fileID: 0}
     - target: {fileID: 1400849533122288051, guid: 7adf5cec6ed22402994e412dda292c31, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.93
+      value: -1.86
       objectReference: {fileID: 0}
     - target: {fileID: 1400849533122288051, guid: 7adf5cec6ed22402994e412dda292c31, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2884,6 +2961,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4155076957842501818, guid: 7adf5cec6ed22402994e412dda292c31, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5482817967715965815, guid: 7adf5cec6ed22402994e412dda292c31, type: 3}
       propertyPath: m_Name
       value: Bush
@@ -2904,6 +2985,10 @@ PrefabInstance:
     - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_Name
       value: GrassMid
+      objectReference: {fileID: 0}
+    - target: {fileID: 401108551953526745, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2094285377729098589, guid: b9c8dcb5c004f41c6a321416621ffd1a, type: 3}
       propertyPath: m_SpriteSortPoint
