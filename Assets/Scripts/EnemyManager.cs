@@ -34,7 +34,6 @@ public class EnemyManager : MonoBehaviour
      }  
 
      if(other.tag == "Bullet"){
-        colliderBusy = true;
         GetDamage(other.GetComponent<BulletManager>().bulletDamage);
         Destroy(other.gameObject);
      }    
@@ -45,7 +44,7 @@ public class EnemyManager : MonoBehaviour
     {
     }
 
-    void onTriggerExit2D(Collider2D other)
+    void OnTriggerExit2D(Collider2D other)
     {
         if(other.tag == "Player" && colliderBusy){
             colliderBusy = false;
