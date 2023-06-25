@@ -28,13 +28,18 @@ public class EnemyManager : MonoBehaviour
         colliderBusy = true;
         other.GetComponent<PlayerManager>().GetDamage(damage);
 
+     }  
+
+     if(other.tag == "Bullet"){
+        colliderBusy = true;
+        GetDamage(other.GetComponent<BulletManager>().bulletDamage);
+        Destroy(other.gameObject);
      }    
 
     }
 
     void OnTriggerStay2D(Collider2D other)
     {
-        print("Collider alanında: " + other.name);
     }
 
     void onTriggerExit2D(Collider2D other)
@@ -42,6 +47,23 @@ public class EnemyManager : MonoBehaviour
         if(other.tag == "Player" && colliderBusy){
             colliderBusy = false;
         }   
-        print("Collider Alanından çıktı: " + other.name);
+    }
+
+    public void GetDamage(float damage)
+    {
+
+        if((health - damage) >= 0){
+            health -= damage;
+        } else {
+            health = 0;
+        }
+        
+        AmIDead();
+    }
+
+    void AmIDead(){
+        if(health <= 0){
+            Destroy(gameObject);
+        }
     }
 }
