@@ -27,6 +27,7 @@ public class MenuManagerMenuScene : MonoBehaviour
 
     public void DataBoardButton()
     {
+        DataManager.Instance.LoadData();
         dataBoard.transform.GetChild(1).GetComponent<Text>().text = "TOTAL BULLET SHOT : "+ DataManager.Instance.totalShotBullet.ToString();
         dataBoard.transform.GetChild(2).GetComponent<Text>().text = "TOTAL ENEMY KILLED : " + DataManager.Instance.totalEnemyKilled.ToString();
         dataBoard.SetActive(true);

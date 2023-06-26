@@ -17,6 +17,8 @@ public class PlayerManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DataManager.Instance.ShotBullet = 0;
+        DataManager.Instance.EnemyKilled = 0; 
         muzzle = transform.GetChild(1);
         slider.maxValue = health;
         slider.value = health;

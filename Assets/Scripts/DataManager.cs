@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TigerForge;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,7 +14,7 @@ public class DataManager : MonoBehaviour
 
     private int enemyKilled = 0;
     private int shotBullet = 0;
-
+    EasyFileSave myFile;
 
     void Start()
     {
@@ -23,14 +24,12 @@ public class DataManager : MonoBehaviour
     {
         if(Instance == null)
         {
-            print("Here this");
             Instance = this;
+            StartProcess();
         } else {
-            print("Destroy it");
             Destroy(gameObject);
             return;
         }
-        print("Before dont destryo");
         DontDestroyOnLoad(gameObject);
     }
 
@@ -64,4 +63,29 @@ public class DataManager : MonoBehaviour
         }
     }
 
+    void StartProcess()
+    {
+        myFile = new EasyFileSave();
+        LoadData();
+
+    }
+
+    public void SaveData()
+    {
+
+        totalShotBullet += shotBullet;
+        totalEnemyKilled += enemyKilled;
+        myFile.Add("totalShotBullet", totalShotBullet);
+        myFile.Add("totalEnemyKilled", totalEnemyKilled);
+        myFile.Save();
+    }
+
+    public void LoadData()
+    {
+        if (myFile.Load()) {
+
+            totalShotBullet = myFile.GetInt("totalShotBullet");
+            totalEnemyKilled = myFile.GetInt("totalEnemyKilled");
+        }
+    }
 }
