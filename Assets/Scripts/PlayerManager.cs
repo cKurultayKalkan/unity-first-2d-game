@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
@@ -10,6 +11,7 @@ public class PlayerManager : MonoBehaviour
     bool dead = false;
     Transform muzzle;
     public Slider slider;
+    bool mouseIsNotOverUI;
 
 
     // Start is called before the first frame update
@@ -23,7 +25,10 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetMouseButtonDown(0)){
+        mouseIsNotOverUI = EventSystem.current.currentSelectedGameObject == null;
+
+        if (Input.GetMouseButtonDown(0) && mouseIsNotOverUI)
+        {
             ShootBullet();
         }
         
@@ -57,6 +62,6 @@ public class PlayerManager : MonoBehaviour
         Transform tempBullet;
         tempBullet = Instantiate(bullet, muzzle.position, Quaternion.identity);
         tempBullet.GetComponent<Rigidbody2D>().AddForce(muzzle.forward * bulletSpeed);
-
+        DataManager.Instance.ShotBullet++;
     }
 }

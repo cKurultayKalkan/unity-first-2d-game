@@ -65,6 +65,7 @@ public class EnemyManager : MonoBehaviour
 
     void AmIDead(){
         if(health <= 0){
+            DataManager.Instance.EnemyKilled++;
             Destroy(gameObject);
         }
     }
