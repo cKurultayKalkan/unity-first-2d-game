@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public float health, bulletSpeed; 
-    public Transform bullet, floatingText;
+    public Transform bullet, floatingText, bloodParticle;
     bool dead = false;
     Transform muzzle;
     public Slider slider;
@@ -38,7 +38,6 @@ public class PlayerManager : MonoBehaviour
 
     public void GetDamage(float damage)
     {
-
         Instantiate(floatingText, transform.position, Quaternion.identity).GetComponent<TextMesh>().text = damage.ToString();
 
         if((health - damage) >= 0){
@@ -55,7 +54,10 @@ public class PlayerManager : MonoBehaviour
 
     void AmIDead(){
         if(health <= 0){
+            Destroy(Instantiate(bloodParticle, transform.position, Quaternion.identity), 3f);
             dead = true;
+            DataManager.Instance.LoseProcess();
+            Destroy(gameObject);
         }
     }
 
